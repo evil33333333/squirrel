@@ -40,7 +40,7 @@ class Squirrel {
                 connection.requestMethod = method ?: method_map[this.method]
 
                 headers?.forEach { entry -> connection.setRequestProperty(entry.key, entry.value) }
-                if (this.method == Method.POST && data != null) {
+                if (data != null) {
                     connection.setRequestProperty("Content-Length", data.length.toString())
                 }
                 connection.useCaches = false
