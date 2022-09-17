@@ -46,7 +46,7 @@ class Squirrel {
                 connection.useCaches = false
                 connection.doOutput = true
                 val stream = DataOutputStream(connection.outputStream)
-                if (this.method == Method.POST && data != null) {
+                if (data != null) {
                     stream.write(data.toByteArray())
                 }
                 stream.close()
@@ -76,9 +76,7 @@ class Squirrel {
                 try {
                     map[result[0]] = result[1]
                 }
-                catch (_: Exception) {
-
-                }
+                catch (_: Exception) {}
             }
             return map
         }
